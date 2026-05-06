@@ -7,7 +7,7 @@
 
   <script
     type="module"
-    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
 
   <style>
@@ -22,7 +22,7 @@
     model-viewer {
       width: 100vw;
       height: 80vh;
-      background: #eeeeee;
+      background: #d9eaf7; /* change this color */
     }
 
     .info {
@@ -43,7 +43,7 @@
 
 <body>
   <model-viewer
-    src="./model.glb?v=10"
+    src="./model.glb"
     ios-src="./model.usdz"
     alt="AR system model"
     camera-controls
@@ -54,11 +54,7 @@
     camera-orbit="45deg 65deg 8m"
     field-of-view="30deg"
     exposure="1"
-    shadow-intensity="0"
-    interaction-prompt="auto"
-    disable-zoom
-    reveal="auto"
-    unlit>
+    shadow-intensity="1">
   </model-viewer>
 
   <div class="info">
