@@ -23,17 +23,20 @@
       width: 100vw;
       height: 80vh;
 
-      /* Pre-AR background gradient */
+      /* Strong visible pre-AR gradient */
       background: linear-gradient(
         135deg,
-        #dbeafe 0%,
-        #f0f9ff 45%,
-        #ffffff 100%
-      );
+        #0f172a 0%,
+        #2563eb 45%,
+        #38bdf8 100%
+      ) !important;
+
+      --poster-color: transparent;
     }
 
     .info {
       padding: 12px;
+      background: white;
     }
 
     .info h2 {
@@ -50,7 +53,7 @@
 
 <body>
   <model-viewer
-    src="./model.glb"
+    src="./model.glb?v=20"
     ios-src="./model.usdz"
     alt="AR system model"
     camera-controls
