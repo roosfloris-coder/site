@@ -16,21 +16,27 @@
       width: 100%;
       height: 100%;
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: white;
+    }
+
+    .viewer-wrap {
+      width: 100vw;
+      height: 80vh;
+      background: linear-gradient(
+        135deg,
+        #ff006e 0%,
+        #8338ec 45%,
+        #3a86ff 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     model-viewer {
-      width: 100vw;
-      height: 80vh;
-
-      /* Strong visible pre-AR gradient */
-      background: linear-gradient(
-        135deg,
-        #0f172a 0%,
-        #2563eb 45%,
-        #38bdf8 100%
-      ) !important;
-
+      width: 100%;
+      height: 100%;
+      background: transparent !important;
       --poster-color: transparent;
     }
 
@@ -52,20 +58,22 @@
 </head>
 
 <body>
-  <model-viewer
-    src="./model.glb?v=20"
-    ios-src="./model.usdz"
-    alt="AR system model"
-    camera-controls
-    auto-rotate
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    ar-scale="fixed"
-    camera-orbit="45deg 65deg 8m"
-    field-of-view="30deg"
-    exposure="1"
-    shadow-intensity="1">
-  </model-viewer>
+  <div class="viewer-wrap">
+    <model-viewer
+      src="./model.glb?v=30"
+      ios-src="./model.usdz"
+      alt="AR system model"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-scale="fixed"
+      camera-orbit="45deg 65deg 8m"
+      field-of-view="30deg"
+      exposure="1"
+      shadow-intensity="1">
+    </model-viewer>
+  </div>
 
   <div class="info">
     <h2>AR System Model</h2>
