@@ -22,7 +22,7 @@
     model-viewer {
       width: 100vw;
       height: 80vh;
-      background: #d0d0d0;
+      background: #eeeeee;
     }
 
     .info {
@@ -38,60 +38,32 @@
       margin: 0;
       font-size: 16px;
     }
-
-    .warning {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #555;
-    }
   </style>
 </head>
 
 <body>
   <model-viewer
-    id="viewer"
-    src="./model.glb"
+    src="./model.glb?v=10"
+    ios-src="./model.usdz"
     alt="AR system model"
     camera-controls
     auto-rotate
     ar
-    ar-modes="webxr scene-viewer"
+    ar-modes="webxr scene-viewer quick-look"
     ar-scale="fixed"
     camera-orbit="45deg 65deg 8m"
     field-of-view="30deg"
     exposure="1"
-    shadow-intensity="0.7"
-    environment-image="neutral">
+    shadow-intensity="0"
+    interaction-prompt="auto"
+    disable-zoom
+    reveal="auto"
+    unlit>
   </model-viewer>
 
   <div class="info">
     <h2>AR System Model</h2>
     <p>Open this page on your phone and tap the AR button.</p>
-    <p class="warning">This version uses only <strong>model.glb</strong>, so the page viewer and AR are testing the same file.</p>
   </div>
-
-  <script>
-    const viewer = document.querySelector('#viewer');
-
-    viewer.addEventListener('load', () => {
-      console.log('GLB loaded successfully');
-
-      if (viewer.model && viewer.model.materials) {
-        console.log('Material count:', viewer.model.materials.length);
-
-        viewer.model.materials.forEach((material, index) => {
-          console.log(
-            index,
-            material.name,
-            material.pbrMetallicRoughness.baseColorFactor
-          );
-        });
-      }
-    });
-
-    viewer.addEventListener('error', (event) => {
-      console.error('Model loading error:', event);
-    });
-  </script>
 </body>
 </html>
